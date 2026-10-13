@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>المجد - الإدارة</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf6f0;--card:#fff;--ink:#0f3d22;--tx:#2b3a31;--mute:#7a8a80;--g:#1b6b38;--gd:#0f3d22;--o:#e8682a;--tint:#e6f2e9;--sand:#f3eadd;--line:#e7dfd2;box-sizing:border-box}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a14;--card:#16251c;--ink:#e6f2e9;--tx:#d3e2d9;--mute:#97ab9f;--tint:#1d3426;--sand:#22352a;--line:#2a4034}}
+:root[data-theme="dark"]{--bg:#0f1a14;--card:#16251c;--ink:#e6f2e9;--tx:#d3e2d9;--mute:#97ab9f;--tint:#1d3426;--sand:#22352a;--line:#2a4034}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Cairo,Tahoma,sans-serif;line-height:1.7}
+button{font:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--o);outline-offset:2px}
+h1,h2{color:var(--ink);margin:0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:24px;color:var(--g)}
+.pin{width:38px;height:38px;border-radius:50%;background:var(--o);display:grid;place-items:center;font-size:18px;flex:none}
+.ad{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
+.sb{background:var(--gd);padding:24px 14px}
+.sb .logo{color:#fff;margin:0 8px 28px}
+.sb button{display:block;width:100%;text-align:start;padding:10px 14px;border:0;background:none;border-radius:12px;color:#d8e8dd;font-weight:600;margin-bottom:4px}
+.sb .on{background:rgba(255,255,255,.14);color:#fff}
+.am{padding:28px 34px 50px;min-width:0}
+.ah{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px}
+.ah h1{font-size:28px}
+.who{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:5px 16px;font-weight:700;font-size:14px}
+.kp{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:24px}
+.kp div{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px 20px;color:var(--mute);font-size:14px}
+.kp b{display:block;font-size:30px;color:var(--ink);line-height:1.3}
+.ag{display:grid;grid-template-columns:1.5fr 1fr;gap:22px;align-items:start}
+.box{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:24px;margin-bottom:22px}
+.box h2{font-size:20px;margin-bottom:10px}
+.tb{width:100%;border-collapse:collapse;font-size:14px}
+.tb th{color:var(--mute);font-weight:600;text-align:start;padding:10px 6px;border-bottom:1px solid var(--line)}
+.tb td{padding:10px 6px;border-bottom:1px solid var(--line);vertical-align:middle}
+.pl{font-size:12px;font-weight:700;border-radius:99px;padding:2px 12px;background:var(--tint);color:var(--g);white-space:nowrap}.pl.w{background:#fde8d8;color:var(--o)}
+.fm label{display:block;font-weight:700;font-size:14px;margin:12px 0 4px;color:var(--mute)}
+.fm input,.fm select,.fm textarea,.fl select{width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--tx);font:inherit}
+.cta{width:100%;margin-top:18px;border:0;background:var(--o);color:#fff;border-radius:14px;padding:12px;font-weight:700;font-size:16px}
+.sm{border:1px solid var(--line);background:var(--sand);color:var(--tx);border-radius:10px;padding:3px 12px;font-size:13px;font-weight:600;margin:2px}
+.sm.d{color:#c0392b}.sm.g{background:var(--g);color:#fff;border-color:var(--g)}
+.er{color:#c0392b;min-height:24px;margin:6px 0 0;font-size:14px}
+.lg{min-height:100vh;display:grid;place-items:center;padding:20px}.lg .box{width:min(400px,100%)}
+.lnk{background:none;border:0;color:var(--g);font-weight:700;padding:4px}
+.emp{text-align:center;color:var(--mute);padding:24px}
+.fl{display:flex;gap:10px;margin-bottom:12px;max-width:260px}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.6);display:grid;place-items:center;z-index:9;padding:16px}
+.ov img{max-width:100%;max-height:80vh;border-radius:14px;background:#fff}
+.th{width:54px;height:40px;object-fit:cover;border-radius:8px}
+@media(max-width:860px){
+.ad{grid-template-columns:1fr}.sb{display:flex;overflow-x:auto;gap:6px;padding:12px;align-items:center}.sb .logo{display:none}.sb button{width:auto;white-space:nowrap;margin:0}
+.am{padding:20px 16px 40px}.kp{grid-template-columns:1fr 1fr}.ag{grid-template-columns:1fr}.ah h1{font-size:22px}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script type="module">
+const FB={apiKey:"AIzaSyBfIsnC8AvKDE4KTuJIeE4U0HrZuyMBB5Q",authDomain:"al-majd-46c27.firebaseapp.com",projectId:"al-majd-46c27",storageBucket:"al-majd-46c27.firebasestorage.app",messagingSenderId:"263183185490",appId:"1:263183185490:web:155cf3138501abdfee118b"};
+let auth,db,A,F,FAIL=null;
+try{const V="https://www.gstatic.com/firebasejs/10.14.1/",[m,a,f]=await Promise.all([import(V+"firebase-app.js"),import(V+"firebase-auth.js"),import(V+"firebase-firestore.js")]);const app=m.initializeApp(FB);A=a;F=f;auth=A.getAuth(app);db=F.getFirestore(app)}catch(e){FAIL=e;console.error(e)}
+if(FAIL){document.body.innerHTML=`<div style="font-family:Cairo,Tahoma,sans-serif;direction:rtl;padding:28px;max-width:520px;margin:auto;line-height:1.8"><h2>تعذّر الاتصال بـ Firebase</h2><p>تأكد من اتصال الإنترنت، وافتح الصفحة من رابط الاستضافة (GitHub Pages) وليس من عارض الملفات.</p><pre style="white-space:pre-wrap;font-size:12px;color:#c0392b">${String(FAIL)}</pre></div>`;throw FAIL}
+const img=(file,max=640,q=.7)=>new Promise((ok,no)=>{const r=new FileReader();r.onerror=no;r.onload=()=>{const i=new Image();i.onerror=no;i.onload=()=>{const k=Math.min(1,max/Math.max(i.width,i.height)),c=document.createElement("canvas");c.width=i.width*k;c.height=i.height*k;c.getContext("2d").drawImage(i,0,0,c.width,c.height);const d=c.toDataURL("image/jpeg",q);d.length>700000?no(new Error("الصورة كبيرة، اختر صورة أصغر")):ok(d)};i.src=r.result};r.readAsDataURL(file)});
+const {collection,doc,getDoc,getDocs,setDoc,updateDoc,deleteDoc,addDoc,onSnapshot,query,where,orderBy,limit,serverTimestamp}=F;
+const $=s=>document.querySelector(s),esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt=n=>(+n||0).toLocaleString("en-US")+" ج.س";
+const EM={"auth/invalid-credential":"البريد أو كلمة المرور غير صحيحة.","auth/email-already-in-use":"هذا البريد مسجل مسبقًا.","auth/weak-password":"كلمة المرور ضعيفة (6 أحرف على الأقل).","auth/invalid-email":"البريد الإلكتروني غير صالح.","auth/user-not-found":"لا يوجد حساب بهذا البريد.","auth/missing-password":"اكتب كلمة المرور."};
+const emsg=e=>EM[e.code]||"حدث خطأ ("+(e.code||e.message)+")";
+const RL={buyer:"مشتري",store:"متجر",rider:"عامل توصيل"},SL={active:"نشط",pending:"بانتظار الموافقة",suspended:"موقوف"},OL={new:"جديد",preparing:"قيد التجهيز",ready:"جاهز",onway:"في الطريق",done:"تم التسليم",cancelled:"ملغي"};
+const TABS=[["ov","📊 نظرة عامة"],["us","👥 المستخدمون"],["st","🏬 المتاجر"],["ad","📣 الإعلانات"],["se","⚙️ الإعدادات"]];
+let U=null,isAdm=false,tab="ov",mode="in",rf="all",S={users:[],stores:[],orders:[],ads:[],admins:[],set:{}},un=[];
+const stop=()=>{un.forEach(f=>f());un=[]};
+const pill=(s,t)=>`<span class="pl ${s==="active"||s==="done"?"":"w"}">${t}</span>`;
+
+function listen(){stop();const L=(k,q)=>un.push(onSnapshot(q,s=>{S[k]=s.docs.map(d=>({id:d.id,...d.data()}));render()},e=>console.error(k,e.code)));
+L("users",query(collection(db,"users"),limit(500)));L("stores",query(collection(db,"stores"),limit(500)));
+L("orders",query(collection(db,"orders"),orderBy("createdAt","desc"),limit(100)));L("ads",collection(db,"ads"));L("admins",collection(db,"admins"));
+un.push(onSnapshot(doc(db,"settings","app"),s=>{S.set=s.data()||{};render()}))}
+
+A.onAuthStateChanged(auth,async u=>{U=u;stop();isAdm=false;if(u){try{isAdm=(await getDoc(doc(db,"admins",u.uid))).exists()}catch(e){}if(isAdm)listen()}render()});
+
+function authView(){const t=mode==="in"?"دخول الإدارة":mode==="up"?"إنشاء حساب":"استرجاع كلمة المرور";
+return `<div class="lg"><form class="box fm" id="af"><div class="logo" style="margin-bottom:12px"><span>المجد</span><span class="pin">📍</span></div><h2>${t}</h2>
+${mode==="up"?`<label for="nm">الاسم</label><input id="nm" required>`:""}<label for="em">البريد الإلكتروني</label><input id="em" type="email" required autocomplete="email">
+${mode!=="fp"?`<label for="pw">كلمة المرور</label><input id="pw" type="password" required autocomplete="${mode==="in"?"current-password":"new-password"}">`:""}
+<div class="er" id="er"></div><button class="cta" style="margin-top:4px">${mode==="in"?"دخول":mode==="up"?"إنشاء الحساب":"إرسال رابط الاسترجاع"}</button>
+<div style="margin-top:10px;display:flex;justify-content:space-between;flex-wrap:wrap">${mode!=="in"?`<button type="button" class="lnk" data-m="in">لدي حساب</button>`:`<button type="button" class="lnk" data-m="up">إنشاء حساب</button><button type="button" class="lnk" data-m="fp">نسيت كلمة المرور؟</button>`}</div></form></div>`}
+
+function noAdmin(){return `<div class="lg"><div class="box"><h2>لا تملك صلاحية الإدارة</h2><p>اطلب من المدير إضافتك، وأرسل له بريدك: <b>${esc(U.email)}</b></p><p style="font-size:13px;color:var(--mute)">أول مدير فقط: أنشئ مستند في Firestore داخل المجموعة <b>admins</b> معرّفه (Document ID) هو: <b style="user-select:all;word-break:break-all">${U.uid}</b></p><button class="cta" data-out="1">تسجيل الخروج</button></div></div>`}
+
+const ov=()=>{const d0=new Date().setHours(0,0,0,0),O=S.orders;return `<div class="kp"><div>المشترون<b>${S.users.filter(u=>u.role==="buyer").length}</b></div><div>المتاجر النشطة<b>${S.stores.filter(s=>s.status==="active").length}</b></div><div>عمال التوصيل<b>${S.users.filter(u=>u.role==="rider"&&u.status==="active").length}</b></div><div>بانتظار الموافقة<b style="color:var(--o)">${S.users.filter(u=>u.status==="pending").length+S.stores.filter(s=>s.status==="pending").length}</b></div></div>
+<div class="box"><h2>آخر الطلبات (${O.filter(o=>o.createdAt?.toMillis?.()>=d0).length} اليوم)</h2>${O.length?`<div style="overflow-x:auto"><table class="tb"><tr><th>المتجر</th><th>العميل</th><th>الإجمالي</th><th>الحالة</th></tr>${O.slice(0,8).map(o=>`<tr><td>${esc(o.storeName)}</td><td>${esc(o.buyerName)}</td><td>${fmt(o.total)}</td><td>${pill(o.status,OL[o.status]||"")}</td></tr>`).join("")}</table></div>`:`<div class="emp">لا توجد طلبات بعد.</div>`}</div>`};
+
+const us=()=>{const L=S.users.filter(u=>rf==="all"||u.role===rf);return `<div class="box"><h2>المستخدمون المسجلون</h2><div class="fl"><select id="rf" aria-label="تصنيف الحساب"><option value="all">كل الحسابات</option>${Object.entries(RL).map(([k,v])=>`<option value="${k}" ${rf===k?"selected":""}>${v}</option>`).join("")}</select></div>
+${L.length?`<div style="overflow-x:auto"><table class="tb"><tr><th>الاسم</th><th>البريد</th><th>الهاتف</th><th>النوع</th><th>الحالة</th><th></th></tr>${L.map(u=>`<tr><td>${esc(u.name)}</td><td>${esc(u.email)}</td><td>${esc(u.phone)}</td><td>${RL[u.role]||""}</td><td>${pill(u.status,SL[u.status]||"")}</td><td style="white-space:nowrap">${u.status!=="active"?`<button class="sm g" data-u="${u.id}" data-v="active">${u.status==="pending"?"قبول":"تفعيل"}</button>`:`<button class="sm d" data-u="${u.id}" data-v="suspended">إيقاف</button>`}${u.role==="store"?`<button class="sm" data-kyc="${u.id}">الهوية</button>`:""}</td></tr>`).join("")}</table></div>`:`<div class="emp">لا توجد حسابات.</div>`}</div>`};
+
+const st=()=>`<div class="box"><h2>المتاجر</h2>${S.stores.length?`<div style="overflow-x:auto"><table class="tb"><tr><th>المتجر</th><th>التصنيف</th><th>صاحب المتجر</th><th>الحالة</th><th></th></tr>${S.stores.map(s=>`<tr><td>${esc(s.name)}</td><td>${esc(s.category)}</td><td>${esc(s.ownerName||s.ownerId)}</td><td>${pill(s.status,SL[s.status]||"")}</td><td style="white-space:nowrap">${s.status!=="active"?`<button class="sm g" data-s="${s.id}" data-v="active">تفعيل</button>`:`<button class="sm d" data-s="${s.id}" data-v="suspended">إيقاف</button>`}<button class="sm d" data-del="stores/${s.id}">حذف</button></td></tr>`).join("")}</table></div>`:`<div class="emp">لا توجد متاجر بعد. تظهر هنا عند تسجيل أصحاب المتاجر.</div>`}</div>`;
+
+const ad=()=>`<div class="ag"><div class="box"><h2>الإعلانات</h2>${S.ads.length?`<table class="tb">${S.ads.map(a=>`<tr><td>${a.img?`<img class="th" src="${a.img}" alt="">`:""}</td><td>${esc(a.title)}</td><td>${pill(a.active?"active":"x",a.active?"ظاهر":"مخفي")}</td><td style="white-space:nowrap"><button class="sm" data-ad="${a.id}">${a.active?"إخفاء":"إظهار"}</button><button class="sm d" data-del="ads/${a.id}">حذف</button></td></tr>`).join("")}</table>`:`<div class="emp">لا توجد إعلانات.</div>`}</div>
+<form class="box fm" id="adf"><h2>إعلان جديد</h2><label for="at">العنوان</label><input id="at" required><label for="al">الرابط (اختياري)</label><input id="al" type="url"><label for="ai">الصورة</label><input id="ai" type="file" accept="image/*" required><div class="er" id="er"></div><button class="cta">نشر الإعلان</button></form></div>`;
+
+const se=()=>{const s=S.set;return `<div class="ag"><form class="box fm" id="sf"><h2>إعدادات التطبيق</h2><label for="s1">قيمة اشتراك المتجر (ج.س)</label><input id="s1" type="number" min="0" value="${s.subFee??""}"><label for="s2">طريقة دفع الاشتراك (تُعرض لصاحب المتجر)</label><textarea id="s2" rows="3">${esc(s.payInfo)}</textarea><label for="s3">رسوم التوصيل (ج.س)</label><input id="s3" type="number" min="0" value="${s.deliveryFee??3000}"><label for="s4">نطاق إشعار العامل (كم)</label><input id="s4" type="number" min="1" value="${s.radiusKm??5}"><div class="er" id="er"></div><button class="cta">حفظ الإعدادات</button></form>
+<div><div class="box"><h2>المديرون</h2><table class="tb">${S.admins.map(a=>`<tr><td>${esc(a.email||a.id)}</td><td>${a.id===U.uid?"أنت":`<button class="sm d" data-del="admins/${a.id}">إزالة</button>`}</td></tr>`).join("")}</table></div>
+<form class="box fm" id="mf"><h2>إضافة مدير</h2><label for="me">بريد مستخدم مسجل</label><input id="me" type="email" required><div class="er" id="er2"></div><button class="cta">إضافة كمدير</button></form></div></div>`};
+
+function render(){const a=$("#app");if(!U){a.innerHTML=authView();return}if(!isAdm){a.innerHTML=noAdmin();return}
+const keep=document.activeElement?.closest?.("form");if(keep&&["sf","adf","mf"].includes(keep.id))return;
+const F2={ov,us,st,ad,se};a.innerHTML=`<div class="ad"><aside class="sb"><div class="logo"><span>المجد</span><span class="pin">📍</span></div>${TABS.map(t=>`<button class="${t[0]===tab?"on":""}" data-t="${t[0]}">${t[1]}</button>`).join("")}<button data-out="1">🚪 خروج</button></aside><div class="am"><div class="ah"><h1>لوحة تحكم الأدمن</h1><span class="who">👤 ${esc(U.email)}</span></div>${F2[tab]()}</div></div>`}
+
+document.addEventListener("click",async e=>{const t=e.target.closest("button");if(!t)return;const d=t.dataset;
+try{if(d.m){mode=d.m;render()}if(d.t){tab=d.t;render()}if(d.out)await A.signOut(auth);
+if(d.u)await updateDoc(doc(db,"users",d.u),{status:d.v});
+if(d.s)await updateDoc(doc(db,"stores",d.s),{status:d.v});
+if(d.ad){const x=S.ads.find(a=>a.id===d.ad);await updateDoc(doc(db,"ads",x.id),{active:!x.active})}
+if(d.del&&confirm("هل أنت متأكد من الحذف؟")){const[c,i]=d.del.split("/");await deleteDoc(doc(db,c,i))}
+if(d.kyc){const k=await getDoc(doc(db,"kyc",d.kyc));const o=document.createElement("div");o.className="ov";o.innerHTML=k.exists()&&k.data().idImg?`<img src="${k.data().idImg}" alt="بطاقة الهوية">`:`<div class="box">لم يرفع صورة هوية.</div>`;o.onclick=()=>o.remove();document.body.append(o)}}
+catch(x){alert("تعذر التنفيذ: "+(x.code||x.message))}});
+document.addEventListener("change",e=>{if(e.target.id==="rf"){rf=e.target.value;render()}});
+document.addEventListener("submit",async e=>{e.preventDefault();const id=e.target.id,v=x=>$("#"+x).value.trim(),er=m=>{const n=$("#er");if(n)n.textContent=m};
+try{if(id==="af"){const em=v("em");if(mode==="in")await A.signInWithEmailAndPassword(auth,em,$("#pw").value);
+else if(mode==="up"){const c=await A.createUserWithEmailAndPassword(auth,em,$("#pw").value);await setDoc(doc(db,"users",c.user.uid),{email:em,name:v("nm"),phone:"",role:"buyer",status:"active",createdAt:serverTimestamp()})}
+else{await A.sendPasswordResetEmail(auth,em);er("تم إرسال رابط الاسترجاع إلى بريدك.")}}
+if(id==="sf"){await setDoc(doc(db,"settings","app"),{subFee:+v("s1")||0,payInfo:v("s2"),deliveryFee:+v("s3")||0,radiusKm:+v("s4")||5},{merge:true});er("تم الحفظ ✓")}
+if(id==="adf"){const f=$("#ai").files[0];await addDoc(collection(db,"ads"),{title:v("at"),link:v("al"),img:await img(f,900,.7),active:true,createdAt:serverTimestamp()});e.target.reset();er("تم النشر ✓")}
+if(id==="mf"){const r=await getDocs(query(collection(db,"users"),where("email","==",v("me")),limit(1)));const n=$("#er2");if(r.empty){n.textContent="لا يوجد مستخدم بهذا البريد. يجب أن يسجل أولًا.";return}const u=r.docs[0];await setDoc(doc(db,"admins",u.id),{email:u.data().email});n.textContent="تمت الإضافة ✓";e.target.reset()}}
+catch(x){er(emsg(x))}});
+render();
+</script>
+</body>
+</html>
